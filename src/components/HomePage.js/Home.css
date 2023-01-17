@@ -1,0 +1,36 @@
+/* body {
+    background-color: #222;
+
+} */
+
+.contain {
+    margin-left: 1rem;
+    margin-right: 10rem;
+    height: 55vh;
+    display: block;
+    width: 100%;
+}
+
+.inside-1 h2 {
+    text-align: center;
+}
+
+.inside-1 {
+    width: 33%;
+    padding-top: 7rem;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.butt {
+    padding-left: 1rem;
+    display: flex;
+}
+
+.butt-1 {
+    padding-right: 0.5rem;
+}
+
+.inside-2 {
+    width: 50%;
+    text-align: center;
+}
