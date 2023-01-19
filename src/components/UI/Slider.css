@@ -1,6 +1,14 @@
 .slide img {
-    width: 20rem;
-    height: 40%;
+    /* width: 10rem; */
+    height: 33rem;
+}
+
+.sec {
+    padding-left: 1rem;
+}
+
+.sec h2 {
+    padding-left: 0.55rem;
 }
 
 .sec button {
