@@ -1,7 +1,7 @@
 import "./Home.css"
 import SimpleSlider from '../UI/Slider';
 import Button from "react-bootstrap/esm/Button";
-import free from '../assets/free.jpg'
+
 
 const home = () => {
 
