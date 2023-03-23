@@ -2,6 +2,10 @@ import "./Home.css"
 import SimpleSlider from '../UI/Slider';
 import { useState } from "react";
 import Button from "react-bootstrap/esm/Button";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1b5c63462ed0fcbcd5a09c415b4b27a3eef2a350
 
 const Home = () => {
     const [title, setTitle] = useState('')
