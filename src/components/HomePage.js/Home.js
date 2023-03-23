@@ -1,9 +1,45 @@
 import "./Home.css"
 import SimpleSlider from '../UI/Slider';
+import { useState } from "react";
 import Button from "react-bootstrap/esm/Button";
-import free from '../assets/free.jpg'
 
-const home = () => {
+const Home = () => {
+    const [title, setTitle] = useState('')
+    const [image, setImage] = useState('')
+    // b8f14a6a8c65baef33f77a05cfe2bf47
+
+    // const fetchData = async () => {
+    //     try {
+    //         const req = await fetch('https://api.themoviedb.org/3/trending/all/day?api_key=b8f14a6a8c65baef33f77a05cfe2bf47', {
+    //             method: 'GET',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             }
+    //         })
+    //         const data2 = await req.json()
+    //         console.log(data2)
+    //     }
+    //     catch (err) { }
+    // }
+    // fetchData()
+
+    const fetchInfo = async () => {
+        try {
+            const req = await fetch('https://api.themoviedb.org/3/movie/157336?api_key=b8f14a6a8c65baef33f77a05cfe2bf47&append_to_response=videos', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            const data = await req.json()
+            console.log(data)
+            setTitle(data.original_title)
+            setImage(`https://image.tmdb.org/t/p/w500/${data.poster_path}`)
+        }
+        catch (err) { }
+    }
+    fetchInfo()
+
 
     return (
 
@@ -25,6 +61,10 @@ const home = () => {
                 </div>
             </div>
             <div>
+                {title}
+                <img src={image} alt="pic of the movie poster"></img>
+            </div>
+            {/* <div>
                 <SimpleSlider />
             </div>
             <div>
@@ -32,10 +72,10 @@ const home = () => {
             </div>
             <div>
                 <SimpleSlider />
-            </div>
+            </div> */}
         </div >
     )
 
 }
 
-export default home
+export default Home
