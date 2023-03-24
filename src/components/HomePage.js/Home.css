@@ -1,15 +1,14 @@
-/* body {
-    background-color: #222;
-
-} */
+body {
+    margin: 0;
+}
 
 .contain {
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
     margin-right: 10rem;
     height: 68vh;
     display: block;
     width: 100%;
-    background-image: url('../assets/placeholder.webp');
+    /* background-image: url('../assets/placeholder.webp'); */
 }
 
 .inside-1 h2 {
@@ -19,7 +18,7 @@
 .inside-1 {
     width: 33%;
     padding-top: 7rem;
-    background-color: rgba(255, 255, 255, 0.5);
+    /* background-color: rgba(255, 255, 255, 0.5); */
 }
 
 .butt {

@@ -5,7 +5,7 @@ import Button from "react-bootstrap/esm/Button";
 
 
 const Home = () => {
-    const [title, setTitle] = useState('')
+    // const [title, setTitle] = useState('')
     // const [id, setId] = useState('')
     // const [image, setImage] = useState('')
     const [moviesData, setMoviesData] = useState([])
