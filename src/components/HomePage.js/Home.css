@@ -6,9 +6,10 @@
 .contain {
     margin-left: 1rem;
     margin-right: 10rem;
-    height: 65vh;
+    height: 68vh;
     display: block;
     width: 100%;
+    background-image: url('../assets/placeholder.webp');
 }
 
 .inside-1 h2 {

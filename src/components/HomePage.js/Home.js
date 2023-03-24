@@ -1,48 +1,36 @@
 import "./Home.css"
 import SimpleSlider from '../UI/Slider';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "react-bootstrap/esm/Button";
-<<<<<<< HEAD
-=======
 
->>>>>>> 1b5c63462ed0fcbcd5a09c415b4b27a3eef2a350
 
 const Home = () => {
     const [title, setTitle] = useState('')
-    const [image, setImage] = useState('')
+    // const [id, setId] = useState('')
+    // const [image, setImage] = useState('')
+    const [moviesData, setMoviesData] = useState([])
     // b8f14a6a8c65baef33f77a05cfe2bf47
 
-    // const fetchData = async () => {
-    //     try {
-    //         const req = await fetch('https://api.themoviedb.org/3/trending/all/day?api_key=b8f14a6a8c65baef33f77a05cfe2bf47', {
-    //             method: 'GET',
-    //             headers: {
-    //                 'Content-Type': 'application/json'
-    //             }
-    //         })
-    //         const data2 = await req.json()
-    //         console.log(data2)
-    //     }
-    //     catch (err) { }
-    // }
-    // fetchData()
-
-    const fetchInfo = async () => {
+    const fetchData = async () => {
         try {
-            const req = await fetch('https://api.themoviedb.org/3/movie/157336?api_key=b8f14a6a8c65baef33f77a05cfe2bf47&append_to_response=videos', {
+            const req = await fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=b8f14a6a8c65baef33f77a05cfe2bf47&language=en-US&page=1', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
                 }
             })
             const data = await req.json()
-            console.log(data)
-            setTitle(data.original_title)
-            setImage(`https://image.tmdb.org/t/p/w500/${data.poster_path}`)
+            console.log(data.results)
+            setMoviesData(data.results)
         }
         catch (err) { }
     }
-    fetchInfo()
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+
+
 
 
     return (
@@ -65,18 +53,16 @@ const Home = () => {
                 </div>
             </div>
             <div>
-                {title}
-                <img src={image} alt="pic of the movie poster"></img>
+                <div>
+                    <SimpleSlider movies={moviesData} />
+                </div>
+                <div>
+                    <SimpleSlider movies={moviesData} />
+                </div>
+                <div>
+                    <SimpleSlider movies={moviesData} />
+                </div>
             </div>
-            {/* <div>
-                <SimpleSlider />
-            </div>
-            <div>
-                <SimpleSlider />
-            </div>
-            <div>
-                <SimpleSlider />
-            </div> */}
         </div >
     )
 
