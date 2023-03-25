@@ -2,6 +2,7 @@ import "./Home.css"
 import SimpleSlider from '../UI/Slider';
 import { useState, useEffect } from "react";
 import Button from "react-bootstrap/esm/Button";
+import Carousel from "../UI/Carousel";
 
 
 const Home = () => {
@@ -37,7 +38,8 @@ const Home = () => {
 
         <div className="sections">
             <div className="contain">
-                <div className="inside-1">
+                <Carousel />
+                {/* <div className="inside-1">
                     <h2>Lorem Ipsum</h2>
                     <p>In publishing and graphic design, Lorem ipsum is a placeholder text
                         commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used
@@ -50,7 +52,7 @@ const Home = () => {
                             <Button variant="secondary">More info</Button>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
             <div>
                 <div>
