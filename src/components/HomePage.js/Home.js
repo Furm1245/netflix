@@ -1,37 +1,83 @@
 import "./Home.css"
 import SimpleSlider from '../UI/Slider';
 import { useState, useEffect } from "react";
-import Button from "react-bootstrap/esm/Button";
+// import Button from "react-bootstrap/esm/Button";
 import Carousel from "../UI/Carousel";
 
 
 const Home = () => {
-    // const [title, setTitle] = useState('')
-    // const [id, setId] = useState('')
-    // const [image, setImage] = useState('')
-    const [moviesData, setMoviesData] = useState([])
+    const [actionData, setActionData] = useState([])
+    const [adventureData, setAdventureData] = useState([])
+    const [animationData, setAnimationData] = useState([])
+    const [horrorData, setHorrorData] = useState([])
     // b8f14a6a8c65baef33f77a05cfe2bf47
 
     const fetchData = async () => {
         try {
-            const req = await fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=b8f14a6a8c65baef33f77a05cfe2bf47&language=en-US&page=1', {
+            const req = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=b8f14a6a8c65baef33f77a05cfe2bf47&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=28&with_watch_monetization_types=flatrate', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
                 }
             })
             const data = await req.json()
-            console.log(data.results)
-            setMoviesData(data.results)
+            console.log(data)
+            setActionData(data.results)
+        }
+        catch (err) { }
+    }
+
+    const fetchData2 = async () => {
+        try {
+            const req = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=b8f14a6a8c65baef33f77a05cfe2bf47&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=12&with_watch_monetization_types=flatrate', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            const data = await req.json()
+            console.log(data)
+            setAdventureData(data.results)
+        }
+        catch (err) { }
+    }
+
+    const fetchData3 = async () => {
+        try {
+            const req = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=b8f14a6a8c65baef33f77a05cfe2bf47&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=16&with_watch_monetization_types=flatrate', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            const data = await req.json()
+            console.log(data)
+            setAnimationData(data.results)
+        }
+        catch (err) { }
+    }
+
+    const fetchData4 = async () => {
+        try {
+            const req = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=b8f14a6a8c65baef33f77a05cfe2bf47&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=27&with_watch_monetization_types=flatrate', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            const data = await req.json()
+            console.log(data)
+            setHorrorData(data.results)
         }
         catch (err) { }
     }
 
     useEffect(() => {
         fetchData()
+        fetchData2()
+        fetchData3()
+        fetchData4()
     }, [])
-
-
 
 
     return (
@@ -39,30 +85,31 @@ const Home = () => {
         <div className="sections">
             <div className="contain">
                 <Carousel />
-                {/* <div className="inside-1">
-                    <h2>Lorem Ipsum</h2>
-                    <p>In publishing and graphic design, Lorem ipsum is a placeholder text
-                        commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used
-                        as a placeholder before final copy is available.</p>
-                    <div className="butt">
-                        <div className="butt-1">
-                            <Button variant="light">Play</Button>
-                        </div>
-                        <div className="butt-2">
-                            <Button variant="secondary">More info</Button>
-                        </div>
-                    </div>
-                </div> */}
             </div>
             <div>
                 <div>
-                    <SimpleSlider movies={moviesData} />
+                    <div>
+                        <h2>Action</h2>
+                    </div>
+                    <SimpleSlider movies={actionData} />
                 </div>
                 <div>
-                    <SimpleSlider movies={moviesData} />
+                    <div>
+                        <h2>Adventure</h2>
+                    </div>
+                    <SimpleSlider movies={adventureData} />
                 </div>
                 <div>
-                    <SimpleSlider movies={moviesData} />
+                    <div>
+                        <h2>Animation</h2>
+                    </div>
+                    <SimpleSlider movies={animationData} />
+                </div>
+                <div>
+                    <div>
+                        <h2>Horror</h2>
+                    </div>
+                    <SimpleSlider movies={horrorData} />
                 </div>
             </div>
         </div >

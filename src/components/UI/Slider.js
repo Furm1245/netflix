@@ -21,16 +21,13 @@ const SimpleSlider = (props) => {
     // ]
 
 
-    const productInfo = props.movies.map(({ id, poster_path, title }) => {
+    const movieInfo = props.movies.map(({ id, poster_path }) => {
         return (
             <div key={id} id={id} className="slide">
                 <img
                     src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
                     alt='A movie'
                 />
-                <div>
-                    <p>{title}</p>
-                </div>
             </div>
         )
     })
@@ -40,15 +37,14 @@ const SimpleSlider = (props) => {
         // { width: 700, itemsToShow: 2 },
         // { width: 900, itemsToShow: 3 },
         // { width: 1550, itemsToShow: 3 },
-        { width: 1600, itemsToShow: 8 },
+        { width: 1600, itemsToShow: 6 },
     ];
 
     return (
 
         <div className="sec">
-            <h2>Genre</h2>
-            <Carousel disableArrowsOnEnd={false} showArrows={false} responsive breakPoints={breakpoints} >
-                {productInfo}
+            <Carousel disableArrowsOnEnd={false} showArrows={true} responsive breakPoints={breakpoints} >
+                {movieInfo}
             </Carousel>
         </div>
     );

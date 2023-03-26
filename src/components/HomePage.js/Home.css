@@ -34,3 +34,7 @@ body {
     width: 50%;
     text-align: center;
 }
+
+.sections h2 {
+    margin-left: 6.5rem;
+}

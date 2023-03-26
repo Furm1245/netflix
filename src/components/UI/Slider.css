@@ -1,18 +1,31 @@
 .slide img {
-    /* width: 10rem; */
-    height: 33rem;
+    width: 28rem;
+    height: 37rem;
+    cursor: pointer;
 }
 
-.sec {
+.slide img:hover {
+    transform: scale(1.1);
+    transition: ease-in .27s;
+}
+
+
+/* .sec {
     padding-left: 1rem;
-}
-
-/* .sec button {
-
-    background-color: black;
-    color: grey;
 } */
+
+.sec button {
+
+    /* background-color: black; */
+    color: black;
+    height: 100%;
+    border-radius: 0;
+}
 
 .sec h2 {
     padding-left: 0.55rem;
+}
+
+.rec rec-pagination {
+    display: none;
 }
