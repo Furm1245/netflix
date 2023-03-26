@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react"
 import "./TV.css"
 
-const TV = () => {
+const Movies = () => {
     const [pictures, setPictures] = useState([])
 
     const fetchData = async () => {
         try {
-            const req = await fetch('https://api.themoviedb.org/3/trending/tv/week?api_key=b8f14a6a8c65baef33f77a05cfe2bf47', {
+            const req = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=b8f14a6a8c65baef33f77a05cfe2bf47&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -45,4 +45,4 @@ const TV = () => {
     )
 }
 
-export default TV
+export default Movies

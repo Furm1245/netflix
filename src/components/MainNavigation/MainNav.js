@@ -16,7 +16,7 @@ const Mainnav = () => {
         <li className="nav-link"><a href="/tv">TV</a></li>
         <li className="nav-link"><a href="/trending">Trending</a></li>
         <form>
-          <input placeholder=''></input>
+          <input placeholder='search'></input>
         </form>
       </ul>
     </nav>

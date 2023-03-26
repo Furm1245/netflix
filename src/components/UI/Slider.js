@@ -35,9 +35,10 @@ const SimpleSlider = (props) => {
     const breakpoints = [
         // { width: 1, itemsToShow: 1 },
         // { width: 700, itemsToShow: 2 },
-        // { width: 900, itemsToShow: 3 },
-        // { width: 1550, itemsToShow: 3 },
+        { width: 1000, itemsToShow: 3 },
+        { width: 1400, itemsToShow: 5 },
         { width: 1600, itemsToShow: 6 },
+        { width: 2000, itemsToShow: 7 },
     ];
 
     return (

@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react"
-import "./TV.css"
+import "./Search.css"
 
 const TV = () => {
     const [pictures, setPictures] = useState([])
 
     const fetchData = async () => {
         try {
-            const req = await fetch('https://api.themoviedb.org/3/trending/tv/week?api_key=b8f14a6a8c65baef33f77a05cfe2bf47', {
+            const req = await fetch('https://api.themoviedb.org/3/scary movie/movie?api_key=b8f14a6a8c65baef33f77a05cfe2bf47', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ const TV = () => {
 
 
     return (
-        <div className="picture-container">
+        <div className="tv-container">
             {movieInfo}
         </div>
 

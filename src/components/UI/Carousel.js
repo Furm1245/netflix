@@ -4,28 +4,26 @@ import { useState } from "react"
 const Carousel = () => {
     const [currentIndex, setCurrentIndex] = useState(1)
 
-    const lorem = 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be usedas a placeholder before final copy is available.'
-
     const dataSlider = [
         {
             id: 1,
-            title: "Lorem ipsum",
-            description: lorem
+            title: "STRANGER THINGS",
+            description: "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl. Watch all you want. This nostalgic nod to '80s sci-fi and horror classics has earned dozens of Emmy nominations, including three for Outstanding Drama."
         },
         {
             id: 2,
-            title: "Lorem ipsum2",
-            description: lorem
+            title: "SCARY MOVIE",
+            description: "Starring Jon Abrahams, Carmen Electra, Shannon Elizabeth, Anna Faris, Kurt Fuller, Regina Hall, Lochlyn Munro, Cheri Oteri, and Dave Sheridan, it follows a group of teenagers who accidentally hit a man with their car, dump his body in a lake and never talk about it again."
         },
         {
             id: 3,
-            title: "Lorem ipsum3",
-            description: lorem
+            title: "IT",
+            description: "Set in Derry, Maine, the film tells the story of The Losers' Club (Lieberher, Ray Taylor, Lillis, Wolfhard, Oleff, Jacobs, and Dylan Grazer), a group of seven outcast children who are terrorized by the eponymous being which emerges from the sewer (Skarsgård), only to face their own personal demons in the process."
         },
         {
             id: 4,
-            title: "STRANGER THINGS",
-            description: lorem
+            title: "TURBO",
+            description: "Turbo (Ryan Reynolds) is a speed-obsessed snail with an unusual dream: to become the world's greatest racer. This odd snail gets a chance to leave his slow-paced life behind when a freak accident gives him the power of superspeed."
         },
     ];
 
@@ -76,7 +74,7 @@ const Carousel = () => {
 
                                 </div>
                                 <div className='carousel-text'>
-                                    <p>{lorem}</p>
+                                    <p>{obj.description}</p>
                                 </div>
                             </div>
                         </div>

@@ -1,16 +1,16 @@
-.tv-container {
+.picture-container {
     display: flex;
     flex-wrap: wrap;
 }
 
-.tv-container img {
+.picture-container img {
     width: 350px;
     height: 550px;
     margin: 25px 0px 4px 15px;
     border-radius: 18px;
 }
 
-.tv-container img:hover {
+.picture-container img:hover {
     transform: scale(1.1);
     cursor: pointer;
     transition: ease-in 0.25s;
