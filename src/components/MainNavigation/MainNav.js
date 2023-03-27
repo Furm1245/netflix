@@ -1,5 +1,6 @@
 import './Mainnav.css'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 const Mainnav = () => {
   return (
@@ -15,9 +16,14 @@ const Mainnav = () => {
         <li className="nav-link"><a href="/movies">Movies</a></li>
         <li className="nav-link"><a href="/tv">TV</a></li>
         <li className="nav-link"><a href="/trending">Trending</a></li>
-        <form>
+        <div>
+          <a href='/search'>
+            <FontAwesomeIcon className="nav-icon" icon={faMagnifyingGlass} />
+          </a>
+        </div>
+        {/* <form>
           <input placeholder='search'></input>
-        </form>
+        </form> */}
       </ul>
     </nav>
   )

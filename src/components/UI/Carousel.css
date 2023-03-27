@@ -47,14 +47,51 @@
 
 .inside-carousel {
     width: 70%;
-    margin-left: 3rem;
+    margin-left: 5rem;
+}
+
+.carousel-text {
+    font-size: 1.7rem;
 }
 
 .carousel-info h2 {
-    margin: 0;
+    margin: .5rem 0;
+    color: white;
 }
 
 .carousel-buttons {
     display: flex;
-    color: black;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.left-button {
+    padding: .75rem 1.5rem;
+    border-radius: 5px;
+    background-color: grey;
+}
+
+.right-button {
+    padding: .75rem 1.5rem;
+    border-radius: 5px;
+    background-color: grey;
+}
+
+.carousel-left-icon {
+    color: rgba(255, 255, 255, .8);
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.carousel-right-icon {
+    color: rgba(255, 255, 255, .8);
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    cursor: pointer;
+    margin-right: 1rem;
 }

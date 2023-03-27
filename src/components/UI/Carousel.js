@@ -1,5 +1,10 @@
 import './Carousel.css'
 import { useState } from "react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
+import { faPlay } from '@fortawesome/free-solid-svg-icons'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 const Carousel = () => {
     const [currentIndex, setCurrentIndex] = useState(1)
@@ -37,14 +42,14 @@ const Carousel = () => {
     }
 
 
-    // const prevSlide = () => {
-    //     if (currentIndex !== 1) {
-    //         setCurrentIndex(currentIndex - 1)
-    //     }
-    //     else if (currentIndex === 1) {
-    //         setCurrentIndex(dataSlider.length)
-    //     }
-    // }
+    const prevSlide = () => {
+        if (currentIndex !== 1) {
+            setCurrentIndex(currentIndex - 1)
+        }
+        else if (currentIndex === 1) {
+            setCurrentIndex(dataSlider.length)
+        }
+    }
 
     // const moveSlide = () => {
 
@@ -59,7 +64,6 @@ const Carousel = () => {
                         className={currentIndex === index + 1 ? "slider active-anim" : "slider"}
                     >
                         <img
-                            onClick={nextSlide}
                             src={process.env.PUBLIC_URL + `/assets/img${currentIndex}.jpg`}
                             alt="posters for movies"
                         />
@@ -69,14 +73,20 @@ const Carousel = () => {
                                     <h2>{obj.title}</h2>
                                 </div>
                                 <div className='carousel-buttons'>
-                                    <div><button>Play</button></div>
-                                    <div><button>Top Rated</button></div>
+                                    <div><button className='left-button'> <FontAwesomeIcon icon={faPlay} /> Play</button></div>
+                                    <div><button className='right-button'> <FontAwesomeIcon icon={faStar} /> Top Rated</button></div>
 
                                 </div>
                                 <div className='carousel-text'>
                                     <p>{obj.description}</p>
                                 </div>
                             </div>
+                        </div>
+                        <div className='carousel-left-icon' onClick={prevSlide}>
+                            <FontAwesomeIcon icon={faChevronLeft} />
+                        </div>
+                        <div className='carousel-right-icon' onClick={nextSlide}>
+                            <FontAwesomeIcon icon={faChevronRight} />
                         </div>
                     </div>
                 )
