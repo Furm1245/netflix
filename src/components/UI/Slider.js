@@ -38,7 +38,7 @@ const SimpleSlider = (props) => {
         { width: 1000, itemsToShow: 3 },
         { width: 1400, itemsToShow: 5 },
         { width: 1600, itemsToShow: 6 },
-        { width: 2000, itemsToShow: 7 },
+        { width: 2000, itemsToShow: 8 },
     ];
 
     return (

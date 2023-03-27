@@ -36,6 +36,7 @@ const Carousel = () => {
         }
     }
 
+
     // const prevSlide = () => {
     //     if (currentIndex !== 1) {
     //         setCurrentIndex(currentIndex - 1)
@@ -52,7 +53,6 @@ const Carousel = () => {
     return (
         <div className='carousel-container'>
             {dataSlider.map((obj, index) => {
-                console.log(obj)
                 return (
                     <div
                         key={obj.id}

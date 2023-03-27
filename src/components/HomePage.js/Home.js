@@ -21,7 +21,6 @@ const Home = () => {
                 }
             })
             const data = await req.json()
-            console.log(data)
             setActionData(data.results)
         }
         catch (err) { }
@@ -36,7 +35,6 @@ const Home = () => {
                 }
             })
             const data = await req.json()
-            console.log(data)
             setAdventureData(data.results)
         }
         catch (err) { }
@@ -51,7 +49,6 @@ const Home = () => {
                 }
             })
             const data = await req.json()
-            console.log(data)
             setAnimationData(data.results)
         }
         catch (err) { }
@@ -66,7 +63,6 @@ const Home = () => {
                 }
             })
             const data = await req.json()
-            console.log(data)
             setHorrorData(data.results)
         }
         catch (err) { }
