@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import "./TV.css"
+import "./Image.css"
 
 const Trending = () => {
     const [pictures, setPictures] = useState([])

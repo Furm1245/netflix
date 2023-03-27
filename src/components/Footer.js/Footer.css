@@ -1,5 +1,24 @@
-.footer-contain {
+.mainC {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
     background-color: rgb(20, 20, 20);
-    height: 15vh;
-    margin-top: 10vh;
+    color: white;
+    margin-top: 5rem;
+}
+
+.copy {
+    flex-direction: column;
+    text-align: center;
+}
+
+@media all and (max-width:640px) {
+    .mainC {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
 }

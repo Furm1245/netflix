@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background-color: #0f0f0f;
+    scrollbar-color: white;
 }
 
 .contain {

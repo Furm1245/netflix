@@ -10,28 +10,32 @@
   }
 
   nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
+      display: grid;
+      grid-template-columns: 1fr 9fr 1fr;
+      align-items: center;
       margin-top: 0;
       box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
       border-bottom: 1px solid #000;
       color: rgba(255, 255, 255, .8);
+      background-color: rgb(20, 20, 20);
+      height: 7vh;
   }
 
   .nav-logo {
       font-size: 25px;
-      margin: 1rem;
+      margin-left: 1rem;
+      align-self: center;
+
   }
 
   .nav-links {
       list-style-type: none;
       display: flex;
-      font-size: 25px;
+      font-size: 18px;
       color: black;
       padding-right: 0.5rem;
       margin: 1rem;
-
+      cursor: pointer;
   }
 
   .nav-link {
@@ -41,6 +45,7 @@
   .nav-icon {
       color: rgba(255, 255, 255, .8);
       font-size: 25px;
+      cursor: pointer;
   }
 
   .nav-icon:hover {
