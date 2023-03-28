@@ -10,8 +10,7 @@
   }
 
   nav {
-      display: grid;
-      grid-template-columns: 1fr 9fr 1fr;
+      display: flex;
       align-items: center;
       margin-top: 0;
       box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
@@ -22,16 +21,18 @@
   }
 
   .nav-logo {
-      font-size: 25px;
+      font-size: 35px;
       margin-left: 1rem;
-      align-self: center;
+      height: 100%;
+      align-self: flex-end;
+      font-family: 'Merriweather', serif;
 
   }
 
   .nav-links {
       list-style-type: none;
       display: flex;
-      font-size: 18px;
+      font-size: 21px;
       color: black;
       padding-right: 0.5rem;
       margin: 1rem;
@@ -39,13 +40,19 @@
   }
 
   .nav-link {
-      margin-right: 1rem;
+      margin: 1rem 2rem;
+  }
+
+  .icon-container {
+      margin-left: auto;
+      margin-right: 3rem;
   }
 
   .nav-icon {
       color: rgba(255, 255, 255, .8);
       font-size: 25px;
       cursor: pointer;
+      width: 100%;
   }
 
   .nav-icon:hover {
