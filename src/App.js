@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.css';
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Wrapper from './components/Wrapper/Wrapper';
 import Home from './components/HomePage.js/Home';

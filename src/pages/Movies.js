@@ -2,15 +2,18 @@ import "./Image.css"
 import { useState, useEffect } from "react"
 import ReactPlayer from 'react-player'
 import movieTrailer from 'movie-trailer'
+import Modal from 'react-bootstrap/Modal';
 
-// import Modal from "../components/UI/Modal"
 
-// import YouTube from 'react-youtube';
 
 const Movies = () => {
     const [video, setVideo] = useState('')
-    const [videoUrl, setVideoUrl] = useState('')
+    const [videoUrl, setVideoUrl] = useState(null)
     const [pictures, setPictures] = useState([])
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const fetchData = async () => {
         try {
@@ -34,7 +37,7 @@ const Movies = () => {
 
             }
             catch (err) {
-                console.log(err)
+                console.log()
             }
         }
         handleSearch()
@@ -47,7 +50,7 @@ const Movies = () => {
 
     const movieInfo = pictures.map(({ id, poster_path, original_title }) => {
         return (
-            <div key={id} id={id} onClick={() => { setVideo(original_title) }}>
+            <div key={id} id={id} onClick={() => { setVideo(original_title); handleShow() }}>
                 <img
                     src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
                     alt='A movie'
@@ -56,13 +59,21 @@ const Movies = () => {
         )
     })
 
-    console.log(video)
-
-
     return (
         <div className="picture-container">
             {movieInfo}
-            <ReactPlayer url={videoUrl} />
+            <Modal show={show} onHide={handleClose} className="backdrop" style={{ opacity: 1 }} centered>
+                {videoUrl == null &&
+                    <>
+                        <Modal.Body>
+                            <h2>This video is unavailable</h2>
+                        </Modal.Body>
+                    </>
+                }
+                {videoUrl !== null &&
+                    <ReactPlayer url={videoUrl} />
+                }
+            </Modal>
         </div>
 
     )
