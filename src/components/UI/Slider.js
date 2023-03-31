@@ -34,7 +34,7 @@ const SimpleSlider = (props) => {
 
     const movieInfo = props.movies.map(({ id, poster_path, original_title }) => {
         return (
-            <div key={id} id={id} className="slide" onClick={() => { setVideo(original_title); handleShow() }}>
+            <div key={id} className="slide" aria-label="Name" onClick={() => { setVideo(original_title); handleShow() }}>
                 <img
                     src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
                     alt='A movie'

@@ -21,7 +21,7 @@ const Mainnav = () => {
         </div>
       </ul>
       <div className='icon-container'>
-        <a href='/search'>
+        <a href='/search' aria-label="links to search page">
           <FontAwesomeIcon className="nav-icon" icon={faMagnifyingGlass} beatFade />
         </a>
       </div>

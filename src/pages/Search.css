@@ -1,5 +1,5 @@
 .search-container {
-    width: 95%;
+    width: 90%;
     margin: 2rem auto;
 }
 
@@ -13,4 +13,19 @@
     color: white;
     border: 0;
     outline: none;
+}
+
+
+.search-container input:focus {
+    border-color: #6EA2DE;
+    box-shadow: 0px 0px 15px red;
+}
+
+.search-container input:hover {
+    border-color: red;
+    box-shadow: 0px 0px 15px red;
+}
+
+.main-container {
+    text-align: center;
 }
