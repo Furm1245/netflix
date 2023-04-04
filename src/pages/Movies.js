@@ -24,7 +24,6 @@ const Movies = () => {
                 }
             })
             const data = await req.json()
-            console.log(data)
             setPictures(data.results)
         }
         catch (err) { }
