@@ -46,7 +46,9 @@
 }
 
 .inside-carousel {
-    width: 70%;
+    width: 80%;
+    height: 60%;
+    overflow: hidden;
     margin-left: 5rem;
 }
 
@@ -95,3 +97,38 @@
     cursor: pointer;
     margin-right: 1rem;
 }
+
+@media all and (max-width: 900px) {
+
+    .carousel-info {
+        width: 45%;
+    }
+
+
+}
+
+@media all and (max-width: 635px) {
+
+    .carousel-container {
+        height: 90%;
+    }
+
+    .carousel-info {
+        position: absolute;
+        display: flex;
+        top: .1px;
+        height: 100%;
+        width: 45%;
+    }
+}
+
+/* @media all and (max-width: 950px) {
+
+    .carousel-info {
+        position: absolute;
+        display: flex;
+        top: .1px;
+        height: 100%;
+        width: 45%;
+    }
+} */
