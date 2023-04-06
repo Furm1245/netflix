@@ -9,6 +9,14 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 const Carousel = () => {
     const [currentIndex, setCurrentIndex] = useState(1)
 
+    const carouselBackground = {
+        backgroundImage: `url(${process.env.PUBLIC_URL
+            + `/assets/img${currentIndex}.jpg`})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover'
+
+    }
+
     const dataSlider = [
         {
             id: 1,
@@ -56,17 +64,16 @@ const Carousel = () => {
     // }
 
     return (
-        <div className='carousel-container'>
+        <div className='carousel-container' style={carouselBackground}>
             {dataSlider.map((obj, index) => {
                 return (
                     <div
                         key={obj.id}
                         className={currentIndex === index + 1 ? "slider active-anim" : "slider"}
                     >
-                        <img
-                            src={process.env.PUBLIC_URL + `/assets/img${currentIndex}.jpg`}
-                            alt="posters for movies"
-                        />
+                        <div className='carousel-left-icon' onClick={prevSlide}>
+                            <FontAwesomeIcon icon={faChevronLeft} />
+                        </div>
                         <div className='carousel-info'>
                             <div className='inside-carousel'>
                                 <div>
@@ -82,9 +89,7 @@ const Carousel = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className='carousel-left-icon' onClick={prevSlide}>
-                            <FontAwesomeIcon icon={faChevronLeft} />
-                        </div>
+
                         <div className='carousel-right-icon' onClick={nextSlide}>
                             <FontAwesomeIcon icon={faChevronRight} />
                         </div>

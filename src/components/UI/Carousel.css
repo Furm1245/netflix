@@ -13,14 +13,6 @@
     transition: ease-in 0.7s;
 }
 
-.slider img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-
-}
-
 .active-anim {
     opacity: 1;
 }
@@ -47,7 +39,7 @@
 
 .inside-carousel {
     width: 80%;
-    height: 60%;
+    height: 30%;
     overflow: hidden;
     margin-left: 5rem;
 }
@@ -82,9 +74,10 @@
 .carousel-left-icon {
     color: rgba(255, 255, 255, .8);
     font-size: 30px;
+    cursor: pointer;
     position: absolute;
     top: 50%;
-    cursor: pointer;
+    z-index: 10;
     margin-left: 1rem;
 }
 
@@ -109,26 +102,18 @@
 
 @media all and (max-width: 635px) {
 
-    .carousel-container {
-        height: 90%;
-    }
-
     .carousel-info {
         position: absolute;
         display: flex;
         top: .1px;
         height: 100%;
-        width: 45%;
+        width: 75%;
+    }
+
+    .inside-carousel {
+        width: 80%;
+        height: 50%;
+        overflow: hidden;
+        margin-left: 5rem;
     }
 }
-
-/* @media all and (max-width: 950px) {
-
-    .carousel-info {
-        position: absolute;
-        display: flex;
-        top: .1px;
-        height: 100%;
-        width: 45%;
-    }
-} */

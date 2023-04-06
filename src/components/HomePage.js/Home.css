@@ -5,12 +5,10 @@ body {
 }
 
 .contain {
-    /* margin-left: 1rem; */
     margin-right: 10rem;
     height: 75vh;
     display: block;
     width: 100%;
-    /* background-image: url('../assets/placeholder.webp'); */
 }
 
 .inside-1 h2 {
@@ -39,5 +37,15 @@ body {
 
 .sections h2 {
     margin-left: 6.5rem;
+    margin-top: 1rem;
     color: rgba(255, 255, 255, .8);
+}
+
+@media all and (max-width: 575px) {
+
+    .contain {
+        height: 55vh;
+    }
+
+
 }

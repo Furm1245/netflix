@@ -1,5 +1,4 @@
 import "./Home.css"
-import SimpleSlider from '../UI/Slider';
 import { useState, useEffect } from "react";
 // import Button from "react-bootstrap/esm/Button";
 import Carousel from "../UI/Carousel";
