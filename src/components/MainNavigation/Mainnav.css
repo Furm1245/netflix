@@ -91,6 +91,23 @@
           margin: 2rem;
       }
 
+
+      /* .nav-reponsive ul {
+          display: flex;
+          position: absolute;
+          top: 99px;
+          left: 0;
+          flex-direction: column;
+          width: 100%;
+          height: calc(100vh - 77px);
+          background-color: black;
+          color: white;
+          padding: 1rem 0;
+          border-top: 1px solid black;
+          margin-bottom: 10rem;
+      } */
+
+
   }
 
   @media all and (max-width: 350px) {

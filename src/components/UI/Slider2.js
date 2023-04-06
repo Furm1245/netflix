@@ -13,6 +13,16 @@ const Slider2 = (props) => {
     }
 
 
+    const movieInfo = props.movies.slice(0, 18).map(({ id, poster_path }) => {
+        return (
+            <img
+                key={id}
+                src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+                alt='A movie'
+            />
+        )
+    })
+
     const prevSlide = () => {
         setIndex(index - 1)
     }
@@ -22,16 +32,6 @@ const Slider2 = (props) => {
 
         console.log(index)
     }
-
-    const movieInfo = props.movies.slice(0, 18).map(({ id, poster_path, original_title }) => {
-        return (
-            <img
-                key={id}
-                src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-                alt='A movie'
-            />
-        )
-    })
 
     return (
         <>
