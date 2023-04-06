@@ -3,6 +3,7 @@ import SimpleSlider from '../UI/Slider';
 import { useState, useEffect } from "react";
 // import Button from "react-bootstrap/esm/Button";
 import Carousel from "../UI/Carousel";
+import Slider2 from "../UI/Slider2";
 
 
 const Home = () => {
@@ -89,25 +90,25 @@ const Home = () => {
                     <div>
                         <h2>Action</h2>
                     </div>
-                    <SimpleSlider movies={actionData} />
+                    <Slider2 movies={actionData} />
                 </div>
                 <div>
                     <div>
                         <h2>Adventure</h2>
                     </div>
-                    <SimpleSlider movies={adventureData} />
+                    <Slider2 movies={adventureData} />
                 </div>
                 <div>
                     <div>
                         <h2>Animation</h2>
                     </div>
-                    <SimpleSlider movies={animationData} />
+                    <Slider2 movies={animationData} />
                 </div>
                 <div>
                     <div>
                         <h2>Horror</h2>
                     </div>
-                    <SimpleSlider movies={horrorData} />
+                    <Slider2 movies={horrorData} />
                 </div>
             </div>
         </div >
