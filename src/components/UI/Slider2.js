@@ -8,6 +8,7 @@ const Slider2 = (props) => {
 
     const [index, setIndex] = useState(0)
 
+
     const SlideAnimation = {
         transform: `translateX(calc(${index} * -100%)`
     }
@@ -23,43 +24,35 @@ const Slider2 = (props) => {
         )
     })
 
-    const calculateProgressBar = () => {
 
-        const slider = document.querySelector('.netflix-slider')
-
-        const itemCount = movieInfo.length
-
-        const itemsPerScreen = parseInt(getComputedStyle(slider).getPropertyValue('--items-per-screen'))
-
-        const progressBarCount = Math.ceil(itemCount / itemsPerScreen)
-
-        console.log(progressBarCount)
-
-
-    }
-
-    calculateProgressBar()
 
 
 
     const prevSlide = () => {
-        setIndex(index - 1)
-    }
+        if (index > 0) {
+            setIndex(index - 1);
+        }
+    };
+
+
 
     const nextSlide = () => {
-        setIndex(index + 1)
+        const slider = document.querySelector('.netflix-slider')
 
-        console.log(index)
-    }
+        const itemCount = parseInt(getComputedStyle(slider).getPropertyValue('--items-per-screen'))
+
+        const maxIndex = Math.ceil(props.movies.length / itemCount) - 1; // Calculate maximum index based on number of movies and items per screen
+
+        if (index < maxIndex - 1) { // Check if current index is less than maximum index
+            setIndex(index + 1);
+        }
+
+    };
+
+
 
     return (
         <>
-            <div className='index-bar'>
-                <div className='index-item active'></div>
-                <div className='index-item'></div>
-                <div className='index-item'></div>
-                <div className='index-item'></div>
-            </div>
             <div className='netflix-container'>
                 <div className='handle left-handle' onClick={prevSlide}>
                     <FontAwesomeIcon icon={faChevronLeft} />
@@ -70,6 +63,8 @@ const Slider2 = (props) => {
                 <div className='handle right-handle' onClick={nextSlide}>
                     <FontAwesomeIcon icon={faChevronRight} />
                 </div>
+
+
             </div>
         </>
     )
