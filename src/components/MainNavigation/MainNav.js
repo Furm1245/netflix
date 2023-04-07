@@ -26,7 +26,7 @@ const Mainnav = () => {
       <div className="nav-logo">
         <a href='/'><h2>React Movies</h2></a>
       </div>
-      <ul className={show === true ? 'nav-responsive' : "nav-links"} id="nav-links">
+      <ul className={`nav-links ${show && 'active'}`} id="nav-links">
         <li className="nav-link"><a href="/">Home</a></li>
         <li className="nav-link"><a href="/movies"><FontAwesomeIcon icon={faVideo} />Movies</a></li>
         <li className="nav-link"><a href="/tv"><FontAwesomeIcon icon={faTv} />TV</a></li>

@@ -28,7 +28,6 @@
   .nav-logo {
       font-size: 35px;
       margin-left: 1rem;
-      /* align-self: flex-end; */
       font-family: 'Merriweather', serif;
 
   }
@@ -84,28 +83,36 @@
       }
 
       .nav-links {
-          display: none;
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          left: 0;
+          top: 60px;
+          margin: 0;
+          width: 0px;
+          background-color: rgb(12, 12, 12);
+          color: white;
+          height: calc(100vh - 60px);
+          transition: all 0.1s ease-in;
+          visibility: hidden;
+          text-align: center;
+      }
+
+      .nav-links.active {
+          width: 60%;
+          z-index: 15;
+          visibility: visible;
+      }
+
+      .nav-link {
+          padding: 2rem;
       }
 
       .icon-container {
           margin: 2rem;
       }
 
-
-      /* .nav-reponsive ul {
-          display: flex;
-          position: absolute;
-          top: 99px;
-          left: 0;
-          flex-direction: column;
-          width: 100%;
-          height: calc(100vh - 77px);
-          background-color: black;
-          color: white;
-          padding: 1rem 0;
-          border-top: 1px solid black;
-          margin-bottom: 10rem;
-      } */
 
 
   }

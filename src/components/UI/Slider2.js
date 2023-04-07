@@ -23,6 +23,25 @@ const Slider2 = (props) => {
         )
     })
 
+    const calculateProgressBar = () => {
+
+        const slider = document.querySelector('.netflix-slider')
+
+        const itemCount = movieInfo.length
+
+        const itemsPerScreen = parseInt(getComputedStyle(slider).getPropertyValue('--items-per-screen'))
+
+        const progressBarCount = Math.ceil(itemCount / itemsPerScreen)
+
+        console.log(progressBarCount)
+
+
+    }
+
+    calculateProgressBar()
+
+
+
     const prevSlide = () => {
         setIndex(index - 1)
     }
@@ -35,13 +54,18 @@ const Slider2 = (props) => {
 
     return (
         <>
+            <div className='index-bar'>
+                <div className='index-item active'></div>
+                <div className='index-item'></div>
+                <div className='index-item'></div>
+                <div className='index-item'></div>
+            </div>
             <div className='netflix-container'>
-                <div className='handle left-handle'>
-                    <FontAwesomeIcon icon={faChevronLeft} onClick={prevSlide} />
+                <div className='handle left-handle' onClick={prevSlide}>
+                    <FontAwesomeIcon icon={faChevronLeft} />
                 </div>
                 <div className="netflix-slider" style={SlideAnimation}>
                     {movieInfo}
-
                 </div>
                 <div className='handle right-handle' onClick={nextSlide}>
                     <FontAwesomeIcon icon={faChevronRight} />

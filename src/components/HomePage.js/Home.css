@@ -8,6 +8,7 @@ body {
     margin-right: 10rem;
     height: 75vh;
     display: block;
+    position: relative;
     width: 100%;
 }
 
