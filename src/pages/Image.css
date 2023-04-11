@@ -21,6 +21,17 @@
     background-color: rgba(10, 10, 10, 0.75);
 }
 
+.react-player {
+    padding-top: 56%;
+    position: relative;
+}
+
+.react-player>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 @media all and (max-width: 390px) {
     .picture-container img {
         width: 250px;

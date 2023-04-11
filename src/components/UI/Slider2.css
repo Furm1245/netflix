@@ -38,6 +38,13 @@
     max-width: calc(100% / var(--items-per-screen));
     aspect-ratio: 17/21;
     padding: .5rem;
+
+}
+
+.netflix-slider img:hover {
+    transform: scale(1.1);
+    transition: ease-in .27s;
+    cursor: pointer;
 }
 
 .handle {

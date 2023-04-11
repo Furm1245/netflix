@@ -1,10 +1,21 @@
 import './Slider2.css'
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import movieTrailer from 'movie-trailer'
+import Modal from 'react-bootstrap/Modal';
+import ReactPlayer from 'react-player'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 const Slider2 = (props) => {
+
+
+    const [video, setVideo] = useState('')
+    const [videoUrl, setVideoUrl] = useState(null)
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const [index, setIndex] = useState(0)
 
@@ -13,20 +24,29 @@ const Slider2 = (props) => {
         transform: `translateX(calc(${index} * -100%)`
     }
 
+    useEffect(() => {
+        const handleSearch = async () => {
+            try {
+                await movieTrailer(video).then(response => setVideoUrl(response))
 
-    const movieInfo = props.movies.slice(0, 18).map(({ id, poster_path }) => {
+            }
+            catch (err) {
+            }
+        }
+        handleSearch()
+    }, [video])
+
+
+    const movieInfo = props.movies.slice(0, 18).map(({ id, poster_path, original_title }) => {
         return (
             <img
                 key={id}
+                onClick={() => { setVideo(original_title); handleShow() }}
                 src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
                 alt='A movie'
             />
         )
     })
-
-
-
-
 
     const prevSlide = () => {
         if (index > 0) {
@@ -47,22 +67,44 @@ const Slider2 = (props) => {
             setIndex(index + 1);
         }
 
-    };
+        if (index >= maxIndex - 1) {
+            setIndex(0)
+        }
+    }
 
 
 
     return (
         <>
             <div className='netflix-container'>
-                <div className='handle left-handle' onClick={prevSlide}>
-                    <FontAwesomeIcon icon={faChevronLeft} />
-                </div>
+                {index > 0 &&
+                    <div className='handle left-handle' onClick={prevSlide}>
+                        <FontAwesomeIcon icon={faChevronLeft} />
+                    </div>
+                }
                 <div className="netflix-slider" style={SlideAnimation}>
                     {movieInfo}
                 </div>
                 <div className='handle right-handle' onClick={nextSlide}>
                     <FontAwesomeIcon icon={faChevronRight} />
                 </div>
+                <Modal show={show} onHide={handleClose} className="backdrop" style={{ opacity: 1 }} centered>
+                    {videoUrl == null &&
+                        <>
+                            <Modal.Body>
+                                <h2>This video is unavailable</h2>
+                            </Modal.Body>
+                        </>
+                    }
+                    {videoUrl !== null &&
+                        <div className="react-player">
+                            <ReactPlayer
+                                width="100%"
+                                height="100%"
+                                url={videoUrl} />
+                        </div>
+                    }
+                </Modal>
 
 
             </div>

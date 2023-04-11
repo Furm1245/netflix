@@ -63,14 +63,20 @@ const Movies = () => {
             {movieInfo}
             <Modal show={show} onHide={handleClose} className="backdrop" style={{ opacity: 1 }} centered>
                 {videoUrl == null &&
-                    <>
+                    <div>
                         <Modal.Body>
                             <h2>This video is unavailable</h2>
                         </Modal.Body>
-                    </>
+                    </div>
                 }
                 {videoUrl !== null &&
-                    <ReactPlayer url={videoUrl} />
+                    <div className="react-player">
+
+                        <ReactPlayer
+                            width="100%"
+                            height="100%"
+                            url={videoUrl} />
+                    </div>
                 }
             </Modal>
         </div>

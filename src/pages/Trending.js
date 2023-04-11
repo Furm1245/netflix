@@ -73,7 +73,12 @@ const Trending = () => {
                     </>
                 }
                 {videoUrl !== null &&
-                    <ReactPlayer url={videoUrl} />
+                    <div className="react-player">
+                        <ReactPlayer
+                            width="100%"
+                            height="100%"
+                            url={videoUrl} />
+                    </div>
                 }
             </Modal>
         </div>
