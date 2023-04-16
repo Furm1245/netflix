@@ -16,7 +16,7 @@ const Home = () => {
 
     const fetchData = async () => {
         try {
-            const req = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=b8f14a6a8c65baef33f77a05cfe2bf47&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=28&with_watch_monetization_types=flatrate', {
+            const req = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=28&with_watch_monetization_types=flatrate`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -30,7 +30,7 @@ const Home = () => {
 
     const fetchData2 = async () => {
         try {
-            const req = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=b8f14a6a8c65baef33f77a05cfe2bf47&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=12&with_watch_monetization_types=flatrate', {
+            const req = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=12&with_watch_monetization_types=flatrate`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -44,7 +44,7 @@ const Home = () => {
 
     const fetchData3 = async () => {
         try {
-            const req = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=b8f14a6a8c65baef33f77a05cfe2bf47&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=16&with_watch_monetization_types=flatrate', {
+            const req = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=16&with_watch_monetization_types=flatrate`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ const Home = () => {
 
     const fetchData4 = async () => {
         try {
-            const req = await fetch('https://api.themoviedb.org/3/discover/movie?api_key=b8f14a6a8c65baef33f77a05cfe2bf47&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=27&with_watch_monetization_types=flatrate', {
+            const req = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_genres=27&with_watch_monetization_types=flatrate`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'

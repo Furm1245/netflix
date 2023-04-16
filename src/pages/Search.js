@@ -19,7 +19,7 @@ const TV = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const req = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=b8f14a6a8c65baef33f77a05cfe2bf47&query=${search}`, {
+                const req = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&query=${search}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json'

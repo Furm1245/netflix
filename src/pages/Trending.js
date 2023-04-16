@@ -17,7 +17,7 @@ const Trending = () => {
 
     const fetchData = async () => {
         try {
-            const req = await fetch('https://api.themoviedb.org/3/trending/tv/day?api_key=b8f14a6a8c65baef33f77a05cfe2bf47', {
+            const req = await fetch(`https://api.themoviedb.org/3/trending/tv/day?api_key=${process.env.REACT_APP_API_KEY}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
