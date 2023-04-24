@@ -2,7 +2,7 @@ import "./Home.css"
 import { useState, useEffect } from "react";
 // import Button from "react-bootstrap/esm/Button";
 import Carousel from "../UI/Carousel";
-import Slider2 from "../UI/Slider2";
+import Slider from "../UI/Slider";
 
 
 const Home = () => {
@@ -89,25 +89,25 @@ const Home = () => {
                     <div>
                         <h2>Action</h2>
                     </div>
-                    <Slider2 movies={actionData} />
+                    <Slider movies={actionData} />
                 </div>
                 <div>
                     <div>
                         <h2>Adventure</h2>
                     </div>
-                    <Slider2 movies={adventureData} />
+                    <Slider movies={adventureData} />
                 </div>
                 <div>
                     <div>
                         <h2>Animation</h2>
                     </div>
-                    <Slider2 movies={animationData} />
+                    <Slider movies={animationData} />
                 </div>
                 <div>
                     <div>
                         <h2>Horror</h2>
                     </div>
-                    <Slider2 movies={horrorData} />
+                    <Slider movies={horrorData} />
                 </div>
             </div>
         </div >
